@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -46,7 +47,7 @@ module.exports = {
           emitWarning: true,
           failOnError: false
         }
-      }
+      }  
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

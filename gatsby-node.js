@@ -6,12 +6,18 @@
 
 // You can delete this file if you're not using it
 
-import { resolve } from 'path';
 
-export function createPages({boundActionCreators, graphql}) {
-  const {createPage} = boundActionCreators;
+// eslint-disable-next-line no-undef
+const path = require('path');
 
-  const postTemplate = resolve('src/templates/post.js');
+// exports.createPages = ({boundActionCreators, graphql}) => { // depricated in v2
+// eslint-disable-next-line no-undef
+exports.createPages = ({actions, graphql}) => {
+
+
+  const {createPage} = actions;
+
+  const postTemplate = path.resolve('src/templates/post.js');
 
   return graphql(`{
     allMarkdownRemark{
@@ -30,11 +36,13 @@ export function createPages({boundActionCreators, graphql}) {
     if(res.errors) {
       return Promise.reject(res.errors);
     }
+
     res.data.allMarkdownRemark.edges.forEach(({node}) => {
       createPage({
         path: node.frontmatter.path,
         component: postTemplate
       })
     })
+    
   })
 }
