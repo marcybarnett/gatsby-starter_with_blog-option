@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -18,4 +18,23 @@ const IndexPage = () => (
   </Layout>
 )
 
+export const pageQuery = graphql`
+query IndexQuery {
+  allMarkdownRemark {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          path
+        }
+        html
+      }
+    }
+  }
+}
+`
+
+
 export default IndexPage
+
