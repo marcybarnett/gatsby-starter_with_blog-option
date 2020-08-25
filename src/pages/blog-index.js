@@ -1,25 +1,20 @@
+// ===[ Example of page with no typescript fluf ]=== //
+
+
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = ({data}) => (
+const BlogPage = ({data}) => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-
+    <SEO title="Blog" />
     <div>
-      <h2>Post Index Test - blog on the homepage</h2>
-      <p>Sticking the post index on the landing page just to test it works.</p>
+      <h2>Post Index Test</h2>
+      <p>This will be the template for the blog on its own page vs on the home/index page.</p>
       <ul>
         {data.allMarkdownRemark.edges.map( post => (
           <li key={post.node.id}>
@@ -28,19 +23,16 @@ const IndexPage = ({data}) => (
           ))}
       </ul>
     </div>
-      
-    <ul>
-        <li><Link to="/page-2/">Go to page 2</Link></li>
-        <li><Link to="/page-3/">Go to page 3</Link></li>
-        <li><Link to="/blog-index/">Go to Blog</Link></li>
-    </ul>
 
-    
+
+
+    <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
 
+
 export const pageQuery = graphql`
-query IndexQuery {
+query BlogSubPageQuery {
   allMarkdownRemark (
     limit: 10
     sort: {fields : [frontmatter___date], order : DESC }
@@ -63,5 +55,6 @@ query IndexQuery {
 `
 
 
-export default IndexPage
+
+export default BlogPage
 

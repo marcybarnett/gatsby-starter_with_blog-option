@@ -19,8 +19,11 @@ exports.createPages = ({actions, graphql}) => {
 
   const postTemplate = path.resolve('src/templates/post.js');
 
+  // needed the sort here for the next/previous links to work correctly
   return graphql(`{
-    allMarkdownRemark{
+    allMarkdownRemark (
+      sort: {order: ASC, fields: [frontmatter___date]}
+    ){
       edges {
         node {
           html
@@ -39,10 +42,18 @@ exports.createPages = ({actions, graphql}) => {
       return Promise.reject(res.errors);
     }
 
-    res.data.allMarkdownRemark.edges.forEach(({node}) => {
+    const posts = res.data.allMarkdownRemark.edges;
+
+    res.data.allMarkdownRemark.edges.forEach(({node}, index) => {
+
       createPage({
         path: node.frontmatter.path,
-        component: postTemplate
+        component: postTemplate,
+        context: {
+          pathSlug: node.frontmatter.path,
+          prev: index === 0 ? null : posts[index - 1].node,
+          next: index === (posts.length - 1) ? null : posts[index + 1].node
+        }
       })
     })
     
