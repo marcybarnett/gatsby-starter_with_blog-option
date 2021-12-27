@@ -1,9 +1,12 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Gatsby starter w/blog",
+  "version": "1.0.0",
+  "author": "Marcy Barnett <marcy@marcybarnett.com>",
+  "engines": {
+    "node": ">=12.14.0"
+  },
   "dependencies": {
     "eslint-webpack-plugin": "^3.1.1",
     "gatsby": "^4.4.0",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.5.4",
+    "@babel/preset-react": "^7.16.5",
     "eslint": "^8.5.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.20.2",
@@ -44,15 +48,11 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
   "resolutions": {
     "graphql": "^15.4.0",
-    "graphql-compose": "^7.25.0"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "graphql-compose": "^7.25.0",
+    "react-dev-utils": "^12.0.0",
+    "immer": "^9.0.6",
+    "object-path": "^0.11.8"
   }
 }
