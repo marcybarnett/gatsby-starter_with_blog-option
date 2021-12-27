@@ -2,7 +2,11 @@
   "env": {
 		"es6": true
 	},
-  "parser": "babel-eslint",
+  "parser": "eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "requireConfigFile": false
+  },
   "rules": {
     "strict": 0
   },

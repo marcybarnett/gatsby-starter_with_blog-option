@@ -12,10 +12,10 @@ const path = require('path');
 
 // exports.createPages = ({boundActionCreators, graphql}) => { // depricated in v2
 // eslint-disable-next-line no-undef
-exports.createPages = ({actions, graphql}) => {
+exports.createPages = ({ actions, graphql }) => {
 
 
-  const {createPage} = actions;
+  const { createPage } = actions;
 
   const postTemplate = path.resolve('src/templates/post.js');
 
@@ -38,13 +38,13 @@ exports.createPages = ({actions, graphql}) => {
       }
     }
   }`).then(res => {
-    if(res.errors) {
+    if (res.errors) {
       return Promise.reject(res.errors);
     }
 
     const posts = res.data.allMarkdownRemark.edges;
 
-    res.data.allMarkdownRemark.edges.forEach(({node}, index) => {
+    res.data.allMarkdownRemark.edges.forEach(({ node }, index) => {
 
       createPage({
         path: node.frontmatter.path,
@@ -56,6 +56,6 @@ exports.createPages = ({actions, graphql}) => {
         }
       })
     })
-    
+
   })
 }
