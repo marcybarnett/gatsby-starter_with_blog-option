@@ -24,12 +24,9 @@ const BlogPage = ({data}) => (
       </ul>
     </div>
 
-
-
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
-
 
 export const pageQuery = graphql`
 query BlogSubPageQuery {

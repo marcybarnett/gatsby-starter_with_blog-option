@@ -14,7 +14,6 @@ const path = require('path');
 // eslint-disable-next-line no-undef
 exports.createPages = ({ actions, graphql }) => {
 
-
   const { createPage } = actions;
 
   const postTemplate = path.resolve('src/templates/post.js');
