@@ -1,10 +1,19 @@
+const metadata = {
+  title: `Gatsby Blog Starter`,
+  description: `Gatsby default starter modified to include a very basic blog option`,
+  author: `Marcy Barnett <marcy@marcybarnett.com>`,
+  name: `gatsby-blog-starter`,
+  short_name: `starter`,
+  start_url: `/`,
+  background_color: `#663399`,
+  theme_color: `#663399`,
+  display: `minimal-ui`,
+  icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+};
+
 /* eslint-disable no-undef */
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Default starter with very basic blog option.`,
-    author: `@gatsbyjs`,
-  },
+  siteMetadata: metadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -25,15 +34,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+      options: metadata,
     },
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
@@ -48,6 +49,7 @@ module.exports = {
         failOnError: false
       }
     },
+    `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

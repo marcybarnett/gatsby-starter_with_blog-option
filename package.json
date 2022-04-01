@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-blog-starter",
   "private": true,
-  "description": "Gatsby starter w/blog",
   "version": "1.0.0",
   "author": "Marcy Barnett <marcy@marcybarnett.com>",
   "engines": {
     "node": ">=12.14.0"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.6",
     "eslint-webpack-plugin": "^3.1.1",
     "gatsby": "^4.4.0",
     "gatsby-image": "^3.11.0",
@@ -16,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-sass": "^5.4.0",
     "gatsby-plugin-sharp": "^4.4.0",
+    "gatsby-plugin-styled-components": "^5.11.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
@@ -23,7 +24,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.0.0",
-    "sass": "^1.45.1"
+    "sass": "^1.45.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
